@@ -283,7 +283,7 @@ define([
                     var byteOffset = property.byteOffset;
                     if (defined(byteOffset)) {
                         // This is a binary property
-                        var componentType = ComponentDatatype.fromName(property.componentType);
+                        var componentType = property.componentType;
                         var type = property.type;
                         //>>includeStart('debug', pragmas.debug);
                         if (!defined(componentType)) {
@@ -296,7 +296,6 @@ define([
                             throw new DeveloperError('Property ' + name + ' requires a batch table binary.');
                         }
                         //>>includeEnd('debug');
-
                         var binaryAccessor = getBinaryAccessor(property);
                         var componentCount = binaryAccessor.componentsPerAttribute;
                         var classType = binaryAccessor.classType;

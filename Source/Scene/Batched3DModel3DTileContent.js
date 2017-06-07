@@ -326,7 +326,7 @@ define([
         var gltfByteLength = byteStart + byteLength - byteOffset;
         //>>includeStart('debug', pragmas.debug);
         if (gltfByteLength === 0) {
-            throw new DeveloperError('glTF byte length is zero, i3dm must have a glTF to instance.');
+            throw new DeveloperError('glTF byte length must be greater than 0.');
         }
         //>>includeEnd('debug');
         var gltfView = new Uint8Array(arrayBuffer, byteOffset, gltfByteLength);
